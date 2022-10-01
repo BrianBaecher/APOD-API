@@ -4,9 +4,8 @@ const image = document.querySelector(".image");
 const form = document.querySelector("#myForm");
 const dateInput = document.querySelector("#date");
 const title = document.querySelector(".title");
+const writeDate = document.querySelector(".writeDate");
 const surpriseButton = document.querySelector(".surprise");
-
-
 
 //array for tracking searches
 let dates = [];
@@ -70,7 +69,7 @@ const surpriseDate = (e) => {
   if (dayRandomString.length === 1) {
     var dayRandomString = "0" + dayRandomString;
   }
-  var randInput = `${yearRandomString}-${monthRandomString}-${dayRandomString}`
+  var randInput = `${yearRandomString}-${monthRandomString}-${dayRandomString}`;
   //current date search entry as object
   let date = {
     id: Date.now(),
@@ -87,19 +86,22 @@ const surpriseDate = (e) => {
     })
     .then((data) => updateDom(data));
 };
-surpriseButton.addEventListener("click", surpriseDate)
+surpriseButton.addEventListener("click", surpriseDate);
 
 function updateDom(data) {
   image.src = data.url;
   quote.textContent = data.explanation;
   title.textContent = data.title;
+  console.log(new Date(data.date))
+  new Date(data.date)
+  writeDate.textContent = (new Date(data.date).toLocaleDateString('en-us', { weekday: "long", year:"numeric", month:"long", day:"numeric"}));
 }
-function nasaTest() {
+function nasaLog() {
   fetch(
     "https://api.nasa.gov/planetary/apod?api_key=20rAsiKpg1mQjVMJKVdCDRa0GRWk1qapVLrf6SAH&date=2010-01-01"
   )
     .then((response) => {
-      return response.json();
+      console.log(response.json());
     })
 
     .then((data) => (image.src = data.url));
