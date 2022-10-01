@@ -3,6 +3,7 @@ const quote = document.querySelector(".quote");
 const image = document.querySelector(".image");
 const form = document.querySelector("#myForm");
 const dateInput = document.querySelector("#date");
+const title = document.querySelector(".title")
 
 //array for tracking searches
 let dates  = []
@@ -23,7 +24,7 @@ const addDate = (e) => {
     )
     .then((response) => {
         return response.json();
-    }).then((data) => image.src = data.url)
+    }).then((data) => updateDom(data))
   };
 
 form.addEventListener("submit", addDate);
@@ -38,3 +39,10 @@ function nasaTest() {
   
       .then((data) => (image.src = data.url));
   }
+
+
+function updateDom(data){
+    image.src = data.url
+    quote.textContent = data.explanation
+    title.textContent = data.title
+}
