@@ -11,8 +11,12 @@ const surpriseButton = document.querySelector(".surprise");
 let dates = [];
 
 const addDate = (e) => {
+  /*SELECTING DATES WITH THE HTML INPUT FORM
+  GIVES THE ENTRY FROM THE DAY PRIOR
+  NOT SURE WHY THAT IS
+  */
   e.preventDefault();
-  console.log("add date ran");
+  console.log(dateInput.value);
   //current date search entry as object
   let date = {
     id: Date.now(),
@@ -27,19 +31,11 @@ const addDate = (e) => {
     .then((response) => {
       return response.json();
     })
-    .then((data) => updateDom(data))
-    .catch((err) => alert("no entry found for that day"));
+    .then((data) => updateDom(data));
 };
 
 form.addEventListener("submit", addDate);
 
-const randomDate = (start, end) => {
-  //code snipped lifted from https://thewebdev.info/2022/05/20/how-to-generate-array-of-random-dates-within-two-dates-with-javascript/
-  return new Date(
-    start.getTime() + Math.random() * (end.getTime() - start.getTime())
-  );
-};
-//d = randomDate(new Date(1996, 2, 1), new Date(2020, 0, 1));
 
 function randYear(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -70,12 +66,10 @@ const surpriseDate = (e) => {
     var dayRandomString = "0" + dayRandomString;
   }
   var randInput = `${yearRandomString}-${monthRandomString}-${dayRandomString}`;
-  //current date search entry as object
   let date = {
     id: Date.now(),
     content: randInput,
   };
-  // push curr date obj to dates
   dates.push(date);
   form.reset();
   fetch(
@@ -92,9 +86,14 @@ function updateDom(data) {
   image.src = data.url;
   quote.textContent = data.explanation;
   title.textContent = data.title;
-  console.log(new Date(data.date))
-  new Date(data.date)
-  writeDate.textContent = (new Date(data.date).toLocaleDateString('en-us', { weekday: "long", year:"numeric", month:"long", day:"numeric"}));
+  console.log(new Date(data.date));
+  new Date(data.date);
+  writeDate.textContent = new Date(data.date).toLocaleDateString("en-us", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 function nasaLog() {
   fetch(

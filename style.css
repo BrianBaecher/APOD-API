@@ -1,6 +1,170 @@
-*{
-    box-sizing: border-box;
-    color: white;
-    background-color: black;
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap");
+* {
+  box-sizing: border-box;
 }
+
+body {
+  background-image: linear-gradient(
+    to right,
+    rgb(67, 13, 13),
+    rgb(62, 26, 104)
+  );
+  color: burlywood;
+  font-family: "Kanit", sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: "Silkscreen", cursive;
+  margin: 1rem 0 1rem 0;
+}
+
+h2 {
+  margin: 1rem 0 0 0;
+}
+
+h3 {
+  margin: 0.5rem 0 0.25rem 0;
+}
+
+.titleCont {
+  display: flex;
+  justify-content: center;
+}
+/*----------------HEADER----------------*/
+.header {
+  background-color: rgba(98, 109, 109, 0.287);
+  display: flex;
+  justify-content: space-around;
+}
+
+.howToDrop{
+    display: none;
+  position: absolute;
+  background-color: #201c1ca9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.howto:hover{
+    color: rgb(37, 30, 22);
+}
+
+.howto:hover .howToDrop{
+    color: burlywood;
+    display: block;
+    text-align: center;
+    max-width: 20vw;
+}
+
+.nasaLink{
+    text-decoration: none;
+    color: burlywood;
+}
+
+.nasaLink:hover{
+    color: aqua;
+}
+
+.aboutDrop{
+    display: none;
+  position: absolute;
+  background-color: #201c1ca9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.about:hover .aboutDrop{
+    color: burlywood;
+    display: block;
+    text-align: center;
+    max-width: 40vw;
+}
+
+/*--------------HEADER END----------------*/
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form > button {
+    margin-top: .25rem;
+    font-family: "Kanit", sans-serif;
+  background-image: linear-gradient(
+    to right,
+    rgb(31, 26, 104),
+    rgb(75, 71, 71)
+  );
+  color: burlywood;
+  border: 1px solid rgb(53, 108, 53);
+  border-radius: 10%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#date {
+  background-image: linear-gradient(
+    to right,
+    rgb(67, 13, 13),
+    rgb(62, 26, 104)
+  );
+  color: burlywood;
+  border-radius: 10%;
+  border: 2px solid burlywood;
+}
+
+.surpCont {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.surpCont > button {
+  background-image: linear-gradient(
+    to right,
+    rgb(31, 26, 104),
+    rgb(75, 71, 71)
+  );
+  color: burlywood;
+  border: 1px solid rgb(53, 108, 53);
+  border-radius: 10%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.surpCont > button > span {
+  font-family: "Kanit", sans-serif;
+  font-size: larger;
+  padding: 0.25rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.imgCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.infoCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 

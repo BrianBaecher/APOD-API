@@ -9,20 +9,40 @@
     <script defer src="app.js"></script>
   </head>
   <body>
-    
-    <h1>APOD</h1>
+    <header class="header">
+      <div class="howto">How-To
+        <span class="howToDrop">Enter a date via the input field. Alternatively, click below for a random entry from the APOD archive</span>
+    </div>
+      <div class="nasa">
+        <a href="https://www.nasa.gov/" target="_blank" class="nasaLink">NASA</a>
+      </div>
+      <div class="about">About
+        <span class="aboutDrop">Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.</span>
+      </div>
+    </header>
+    <span class="titleCont">
+      <h1>APOD</h1>
+    </span>
     <form id="myForm" class="form">
       <input type="date" name="date" id="date" />
-      <button type="submit">submit</button>
+      <button type="submit">Submit</button>
     </form>
-    <button type="submit" class="surprise">Surprise Me</button>
-    <h2 class="title"></h2>
-    <h3 class="writeDate"></h3>
-    <img
-    class="image"
-    src="https://upload.wikimedia.org/wikipedia/commons/7/70/Checkerboard_pattern.svg"
-    alt=""
-    />
-    <p class="quote"></p>
+    <span class="surpCont">
+      <button type="submit" class="surprise">
+        <span id="surpButtonText">Surprise Me</span>
+      </button>
+    </span>
+    <span class="infoCont">
+      <h2 class="title"></h2>
+      <h3 class="writeDate"></h3>
+    </span>
+    <span class="imgCont">
+      <img
+        class="image"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/2449px-NASA_logo.svg.png"
+        alt=""
+      />
+      <p class="quote"></p>
+    </span>
   </body>
 </html>
