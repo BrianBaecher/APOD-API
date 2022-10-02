@@ -12,6 +12,7 @@ body {
   );
   color: burlywood;
   font-family: "Kanit", sans-serif;
+  height: 100vmax;
 }
 
 h1 {
@@ -156,17 +157,28 @@ form > button {
   padding: 0.25rem;
 }
 
+
+
+/*------------IMAGE AND TEXT----------------  */
+
+.p-img-Cont{
+  display: flex;
+  flex-direction: column;
+}
+
+
 img {
-  max-width: 100%;
   height: auto;
+  max-height: 500px;
+
 }
 
 .imgCont {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   padding-left: 10vw;
   padding-right: 10vw;
+  max-height: 500px;
 }
 
 .infoCont {
@@ -175,4 +187,8 @@ img {
   align-items: center;
 }
 
+/*------------END IMAGE AND TEXT ----------------*/
 
+footer{
+  background-color: aqua;
+}

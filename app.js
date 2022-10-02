@@ -7,6 +7,7 @@ const title = document.querySelector(".title");
 const writeDate = document.querySelector(".writeDate");
 const surpriseButton = document.querySelector(".surprise");
 
+
 //array for tracking searches
 let dates = [];
 
